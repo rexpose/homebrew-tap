@@ -3,7 +3,7 @@ cask "rexpose" do
   name "rexpose"
   desc ""
   homepage ""
-  version "1.2.0"
+  version "1.2.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,18 +12,24 @@ cask "rexpose" do
   binary "rexpose"
 
   on_macos do
-    url "https://github.com/k4i6/rexpose/releases/download/#{version}/rexpose_Darwin_all.tar.gz"
-    sha256 "83a99f2ac05785f6b950f2b0213fb675dc112755ce9621a02bc11d77c72f9869"
+    url "https://github.com/rexpose/rexpose/releases/download/#{version}/rexpose_Darwin_all.tar.gz"
+    sha256 "09050c90b3728d4befc80aae928668714cbc35c966d4c77b8fc48391246ca622"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/k4i6/rexpose/releases/download/#{version}/rexpose_Linux_x86_64.tar.gz"
-      sha256 "371e3161a861c417f5714c1a170be6b8d1b3f51cee5d5880b757e0434421cfec"
+      url "https://github.com/rexpose/rexpose/releases/download/#{version}/rexpose_Linux_x86_64.tar.gz"
+      sha256 "655830ac2b87d23e50c0ae93f3f3fe332e1229231be8e01500b7e051bcfee13b"
     end
     on_arm do
-      url "https://github.com/k4i6/rexpose/releases/download/#{version}/rexpose_Linux_arm64.tar.gz"
-      sha256 "27b6120ac953f11678f72c321104699c9bce36dc46b0f3a6395ced52bd8c4c6b"
+      url "https://github.com/rexpose/rexpose/releases/download/#{version}/rexpose_Linux_arm64.tar.gz"
+      sha256 "70c19458d6ae6c07b9536332c5f577d8ff279af135faf001e0752e149542162b"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/rexpose"]
     end
   end
 
