@@ -3,7 +3,7 @@ cask "rexpose" do
   name "rexpose"
   desc ""
   homepage ""
-  version "1.3.1"
+  version "1.3.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,17 +13,17 @@ cask "rexpose" do
 
   on_macos do
     url "https://github.com/rexpose/rexpose/releases/download/#{version}/rexpose_Darwin_all.tar.gz"
-    sha256 "a401ae8e700635a6b2d6d10b749928c0d6dddaa1b81d98385813b889b2498878"
+    sha256 "880e9e514d30f8fd7963b29731c7349e503feb0aa68b2b3359436f717c73835e"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/rexpose/rexpose/releases/download/#{version}/rexpose_Linux_x86_64.tar.gz"
-      sha256 "0f84a3de25ec6f9fe6d4cbde181ac9a9028f6374bf213c6c76a0876f7b399c93"
+      sha256 "c36300e1cc9cea92a9120211b53a843fb69112409418a47a171a930d363f061a"
     end
     on_arm do
       url "https://github.com/rexpose/rexpose/releases/download/#{version}/rexpose_Linux_arm64.tar.gz"
-      sha256 "5812496c0d9ea74b9a409101beba96656b4a57a14c39270110359f12e0451b57"
+      sha256 "976af3d175075d2e874edf8752ec4afd5cde2111325e3d7a6635c2d175e208db"
     end
   end
 
